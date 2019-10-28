@@ -1573,7 +1573,7 @@ class RemoveSaturation(MultiplySaturation):
               per image.
             * If a StochasticParameter, then a value will be sampled from that
               parameter per image.
-    
+
     from_colorspace : str, optional
         See :func:`imgaug.augmenters.color.change_colorspace_`.
 
@@ -2527,6 +2527,7 @@ class GrayscaleColorwise(meta.Augmenter):
                  alpha=[0.0, 1.0], offset=(0.0, 1.0),
                  from_colorspace=CSPACE_RGB,
                  name=None, deterministic=False, random_state=None):
+        # pylint: disable=dangerous-default-value
         super(GrayscaleColorwise, self).__init__(
             name=name, deterministic=deterministic, random_state=random_state)
 
